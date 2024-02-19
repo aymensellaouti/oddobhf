@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Cv } from '../model/cv.model';
 
 @Component({
   selector: 'app-item',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./item.component.css']
 })
 export class ItemComponent {
-
+  @Input({required: true}) cv!: Cv;
 }
