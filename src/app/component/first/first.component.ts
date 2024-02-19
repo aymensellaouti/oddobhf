@@ -7,8 +7,18 @@ import { Component } from '@angular/core';
 })
 export class FirstComponent {
   name = 'aymen';
+  message = '';
+  isHidden = true;
   constructor() {
-    setInterval(() => this.name === 'aymen' ? this.name= 'boutheina' : this.name = 'aymen', 3000);
+    // setInterval(() => {
+    //   this.isHidden = ! this.isHidden;
+    // }, 1500);
+  }
 
+  interupteur() {
+    this.isHidden = !this.isHidden;
+  }
+  changeMessage(message: string) {
+    this.message = message;
   }
 }

@@ -1,4 +1,13 @@
-<p>  {{name}} works!</p>
+<p [hidden]="isHidden">  {{name}} works!</p>
+
+<button (click)="interupteur()" class="btn btn-danger">
+  Show/Hide
+</button>
+
+<input #monInput (change)="changeMessage(monInput.value)" type="text" class="form-control">
+
+<p>Le contenu de l'input est : {{message}} </p>
+
 <div class="alert alert-warning">
   <app-second></app-second>
 </div>
