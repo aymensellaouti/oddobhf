@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Todo } from '../model/todo';
-import { LoggerService } from 'src/app/services/logger.service';
 
 @Injectable({
   providedIn: 'root',

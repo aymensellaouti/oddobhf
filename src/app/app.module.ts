@@ -24,6 +24,7 @@ import { BtcToUsdPipe } from './pipes/btc-to-usd.pipe';
 import { DefaultImagePipe } from './cv/pipes/default-image.pipe';
 import { HelloService } from './service/hello.service';
 import { LoggerService } from './service/logger.service';
+import { TodoComponent } from './todo/component/todo/todo.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { LoggerService } from './service/logger.service';
     HighlightDirective,
     RainbowDirective,
     BtcToUsdPipe,
-    DefaultImagePipe
+    DefaultImagePipe,
+    TodoComponent
   ],
   imports: [
     BrowserModule,
