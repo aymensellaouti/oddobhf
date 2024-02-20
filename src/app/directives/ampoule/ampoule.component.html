@@ -1,8 +1,9 @@
-<div (click)="interrupteur()" [ngClass]="{
+<div appRainbow (click)="interrupteur()" [ngClass]="{
   on: isOn,
   off: !isOn
 }" class="ampoule">ampoule </div>
 
+<input type="text" appRainbow>
 
 <p appHighlight [in]="'pink'"  [out]="'gold'">cc </p>
 <p appHighlight [in]="'blue'">cc 2 </p>

@@ -1,4 +1,4 @@
-import { Directive, HostBinding, HostListener, Input, OnInit } from '@angular/core';
+import { Directive, ElementRef, HostBinding, HostListener, Input, OnInit } from '@angular/core';
 
 @Directive({
   selector: "[appHighlight]"
@@ -9,7 +9,7 @@ export class HighlightDirective implements OnInit {
   @Input() out = 'red';
   // Chneya les attributs que je veux manipuler
   @HostBinding('style.backgroundColor') bgc = this.out;
-  constructor() {
+  constructor(private element: ElementRef) {
     console.log("Je suis la highlight directive");
   }
   ngOnInit(): void {
@@ -19,11 +19,13 @@ export class HighlightDirective implements OnInit {
   // chneya nhab na3mel ou wa9tech
   // 1 Ki nodkhel lel host nbadel couleur el background
   @HostListener('mouseenter') onMouseEnter() {
+    this.element.nativeElement.innerHTML = 'IN';
     this.bgc = this.in;
   }
   // 2 Ki tokhrej lel host nbadel couleur el background
   @HostListener('mouseleave') onMouseLeave() {
     this.bgc = this.out;
+    this.element.nativeElement.innerHTML = 'OUT';
   }
 
 }

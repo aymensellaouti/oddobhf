@@ -19,6 +19,7 @@ import { StyleComponent } from './directives/style/style.component';
 import { MiniWordComponent } from './directives/mini-word/mini-word.component';
 import { AmpouleComponent } from './directives/ampoule/ampoule.component';
 import { HighlightDirective } from './directives/highlight.directive';
+import { RainbowDirective } from './directive/rainbow.directive';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { HighlightDirective } from './directives/highlight.directive';
     StyleComponent,
     MiniWordComponent,
     AmpouleComponent,
-    HighlightDirective
+    HighlightDirective,
+    RainbowDirective
   ],
   imports: [
     BrowserModule,
