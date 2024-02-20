@@ -27,6 +27,15 @@ export class CvComponent {
       '12345',
       5
     ),
+    new Cv(
+      3,
+      'bouthaina',
+      'bouthaina',
+      'teacher',
+      'rotating_card_profile.png',
+      '12345',
+      20
+    ),
   ];
 
   onSelectCv(cv: Cv) {
