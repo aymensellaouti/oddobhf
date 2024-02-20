@@ -20,6 +20,7 @@ import { MiniWordComponent } from './directives/mini-word/mini-word.component';
 import { AmpouleComponent } from './directives/ampoule/ampoule.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { RainbowDirective } from './directive/rainbow.directive';
+import { BtcToUsdPipe } from './pipes/btc-to-usd.pipe';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { RainbowDirective } from './directive/rainbow.directive';
     MiniWordComponent,
     AmpouleComponent,
     HighlightDirective,
-    RainbowDirective
+    RainbowDirective,
+    BtcToUsdPipe
   ],
   imports: [
     BrowserModule,

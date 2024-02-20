@@ -8,13 +8,14 @@ import { Cv } from '../model/cv.model';
 })
 export class CvComponent {
   selectedCv!: Cv;
+  now = new Date();
   cvs: Cv[] = [
     new Cv(
       1,
       'sellaouti',
       'aymen',
       'teacher',
-      'rotating_card_profile2.png',
+      '',
       '1234',
       41
     ),
@@ -23,7 +24,7 @@ export class CvComponent {
       'sellaouti',
       'skander',
       'teacher',
-      'rotating_card_profile3.png',
+      '    ',
       '12345',
       5
     ),

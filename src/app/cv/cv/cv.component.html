@@ -1,5 +1,12 @@
 <div class="row">
   <div class="col">
+    <div class="alert alert-warning">
+      {{now | date:'medium' | uppercase}}
+    </div>
+    <div class="alert alert-warning">
+      {{1 | btcToUsd | currency:'USD'}}
+      <p>{{1 | btcToUsd: false }}</p>
+    </div>
     <app-list (selectCv)="onSelectCv($event)" [cvs]="cvs"></app-list>
   </div>
   <div class="col">
