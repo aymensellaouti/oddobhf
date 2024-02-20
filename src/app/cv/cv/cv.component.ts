@@ -7,6 +7,7 @@ import { Cv } from '../model/cv.model';
   styleUrls: ['./cv.component.css'],
 })
 export class CvComponent {
+  selectedCv!: Cv;
   cvs: Cv[] = [
     new Cv(
       1,
@@ -27,4 +28,8 @@ export class CvComponent {
       5
     ),
   ];
+
+  onSelectCv(cv: Cv) {
+    this.selectedCv = cv;
+  }
 }
