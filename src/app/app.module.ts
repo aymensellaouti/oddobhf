@@ -21,6 +21,7 @@ import { AmpouleComponent } from './directives/ampoule/ampoule.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { RainbowDirective } from './directive/rainbow.directive';
 import { BtcToUsdPipe } from './pipes/btc-to-usd.pipe';
+import { DefaultImagePipe } from './cv/pipes/default-image.pipe';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { BtcToUsdPipe } from './pipes/btc-to-usd.pipe';
     AmpouleComponent,
     HighlightDirective,
     RainbowDirective,
-    BtcToUsdPipe
+    BtcToUsdPipe,
+    DefaultImagePipe
   ],
   imports: [
     BrowserModule,
