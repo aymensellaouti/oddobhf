@@ -22,6 +22,8 @@ import { HighlightDirective } from './directives/highlight.directive';
 import { RainbowDirective } from './directive/rainbow.directive';
 import { BtcToUsdPipe } from './pipes/btc-to-usd.pipe';
 import { DefaultImagePipe } from './cv/pipes/default-image.pipe';
+import { HelloService } from './service/hello.service';
+import { LoggerService } from './service/logger.service';
 
 @NgModule({
   declarations: [

@@ -1,0 +1,43 @@
+import { Injectable } from '@angular/core';
+import { Todo } from '../model/todo';
+import { LoggerService } from 'src/app/services/logger.service';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class TodoService {
+  todos: Todo[] = [];
+  constructor() {}
+
+  /**
+   * retourne la liste des todos
+   */
+  getTodos(): Todo[] {
+    return [];
+  }
+
+  /**
+   *
+   * Logger la liste des todos
+   */
+  logTodos(): void {
+
+  }
+  /**
+   * Retourne true si l'élément est supprimé, false sinon
+   *
+   * @param todo: Todo
+   * @returns boolean
+   */
+  deleteTodo(todo: Todo): boolean {
+   return true
+  }
+
+  /**
+   * Ajoute un todo
+   * @param todo : Todo
+   */
+  addTodo(todo: Todo): void {
+
+  }
+}
