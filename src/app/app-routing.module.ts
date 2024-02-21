@@ -8,9 +8,11 @@ import { MiniWordComponent } from './directives/mini-word/mini-word.component';
 import { SecondComponent } from './component/second/second.component';
 import { DetailsCvComponent } from './cv/details-cv/details-cv.component';
 import { NF404Component } from './compnent/nf404/nf404.component';
+import { LoginComponent } from './auth/login/login.component';
 // todo
 const routes: Routes = [
   {path: '', component: FirstComponent},
+  {path: 'login', component: LoginComponent},
   {path: 'cv', children: [
     {path: '', component: CvComponent},
     {path: ':id', component: DetailsCvComponent},
