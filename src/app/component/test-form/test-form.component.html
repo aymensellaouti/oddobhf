@@ -1,0 +1,12 @@
+<form #monForm="ngForm">
+  <input ngModel required name="name" [value]="default" type="text" class="form-control">
+  <input ngModel required pattern="[01]?\d{1,2}" name="age" type="number" class="form-control">
+  <button (click)="processForm(monForm)" class="btn btn-danger">envoyer</button>
+</form>
+
+0
+01
+001
+100
+90
+4
