@@ -29,6 +29,7 @@ import { RainbowDirective } from './directive/rainbow.directive';
 import { BtcToUsdPipe } from './pipes/btc-to-usd.pipe';
 import { DefaultImagePipe } from './cv/pipes/default-image.pipe';
 import { TodoComponent } from './todo/component/todo/todo.component';
+import { EmbaucheComponent } from './cv/embauche/embauche.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,6 +52,7 @@ import { TodoComponent } from './todo/component/todo/todo.component';
     BtcToUsdPipe,
     DefaultImagePipe,
     TodoComponent,
+    EmbaucheComponent
   ],
   imports: [
     BrowserModule,
