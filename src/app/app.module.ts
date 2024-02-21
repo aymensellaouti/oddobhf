@@ -1,13 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
+
+import { ToastrModule } from 'ngx-toastr';
+
+
 import { AppComponent } from './app.component';
 import { FirstComponent } from './component/first/first.component';
 import { SecondComponent } from './component/second/second.component';
 import { ColorComponent } from './component/color/color.component';
 import { TwoComponent } from './component/two/two.component';
-import { FormsModule } from '@angular/forms';
+
 import { CardComponent } from './component/card/card.component';
 import { PereComponent } from './component/pere/pere.component';
 import { FilsComponent } from './component/fils/fils.component';
@@ -22,10 +28,7 @@ import { HighlightDirective } from './directives/highlight.directive';
 import { RainbowDirective } from './directive/rainbow.directive';
 import { BtcToUsdPipe } from './pipes/btc-to-usd.pipe';
 import { DefaultImagePipe } from './cv/pipes/default-image.pipe';
-import { HelloService } from './service/hello.service';
-import { LoggerService } from './service/logger.service';
 import { TodoComponent } from './todo/component/todo/todo.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,14 +50,16 @@ import { TodoComponent } from './todo/component/todo/todo.component';
     RainbowDirective,
     BtcToUsdPipe,
     DefaultImagePipe,
-    TodoComponent
+    TodoComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({}),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

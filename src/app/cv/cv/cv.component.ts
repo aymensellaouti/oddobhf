@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Cv } from '../model/cv.model';
 import { HelloService } from 'src/app/service/hello.service';
+import { TodoService } from 'src/app/todo/services/todo.service';
 
 @Component({
   selector: 'app-cv',
@@ -39,10 +40,11 @@ export class CvComponent {
       20
     ),
   ];
-  constructor(private helloService: HelloService) {
+  constructor(private helloService: HelloService, private todoService: TodoService) {
     this.helloService.sayHello('Je suis cvComponent');
   }
   onSelectCv(cv: Cv) {
     this.selectedCv = cv;
+    this.todoService.logTodos();
   }
 }
