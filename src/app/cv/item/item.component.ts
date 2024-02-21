@@ -8,7 +8,7 @@ import { Cv } from '../model/cv.model';
 })
 export class ItemComponent {
   @Input({required: true}) cv!: Cv;
-
+  @Input() size = 50;
   // Je dois créer un evenement signalant
   // que quelqu'un a cliqué sur moi
   @Output() selectCv = new EventEmitter<Cv>();

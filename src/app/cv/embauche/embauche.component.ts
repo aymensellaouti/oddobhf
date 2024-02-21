@@ -11,8 +11,8 @@ export class EmbaucheComponent {
 
   embauchees: Cv[] = [];
 
-  constructor() {
-
+  constructor(private embaucheService: EmbaucheService) {
+    this.embauchees = this.embaucheService.getCvs();
   }
 
 }
