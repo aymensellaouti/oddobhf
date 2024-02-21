@@ -32,6 +32,7 @@ import { TodoComponent } from './todo/component/todo/todo.component';
 import { EmbaucheComponent } from './cv/embauche/embauche.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { DetailsCvComponent } from './cv/details-cv/details-cv.component';
+import { NF404Component } from './compnent/nf404/nf404.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,7 +57,8 @@ import { DetailsCvComponent } from './cv/details-cv/details-cv.component';
     TodoComponent,
     EmbaucheComponent,
     NavbarComponent,
-    DetailsCvComponent
+    DetailsCvComponent,
+    NF404Component
   ],
   imports: [
     BrowserModule,
