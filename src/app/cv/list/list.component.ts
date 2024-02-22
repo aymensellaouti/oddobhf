@@ -8,12 +8,8 @@ import { Cv } from '../model/cv.model';
 })
 export class ListComponent {
   @Input({ required: true }) cvs: Cv[] = [];
-  @Output() selectCv = new EventEmitter<Cv>();
+  //@Output() selectCv = new EventEmitter<Cv>();
   // Ki bech iesma3 click sar 3la el item
   // bech i9oul (forward) lel parent mta3ou
-  forwardCv(cv: Cv) {
-    console.log('Rani sma3t levent selectCv ou rani recupérit el cv', cv);
 
-    this.selectCv.emit(cv);
-  }
 }

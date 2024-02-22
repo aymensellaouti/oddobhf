@@ -3,6 +3,7 @@ import { Cv } from '../model/cv.model';
 import { HelloService } from 'src/app/service/hello.service';
 import { TodoService } from 'src/app/todo/services/todo.service';
 import { CvService } from '../services/cv.service';
+import { distinctUntilChanged } from 'rxjs';
 
 @Component({
   selector: 'app-cv',
@@ -20,9 +21,15 @@ export class CvComponent {
   ) {
     this.cvs = this.cvService.getCvs();
     this.helloService.sayHello('Je suis cvComponent');
+    this.cvService.selectCv$
+    .pipe(distinctUntilChanged())
+    .subscribe(
+      (cv) => {
+        console.log(cv);
+
+        this.selectedCv = cv;
+      }
+    )
   }
-  onSelectCv(cv: Cv) {
-    this.selectedCv = cv;
-    this.todoService.logTodos();
-  }
+
 }
