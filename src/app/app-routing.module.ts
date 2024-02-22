@@ -10,20 +10,24 @@ import { DetailsCvComponent } from './cv/details-cv/details-cv.component';
 import { NF404Component } from './compnent/nf404/nf404.component';
 import { LoginComponent } from './auth/login/login.component';
 import { AddCvComponent } from './cv/add-cv/add-cv.component';
+import { loginGuard } from './auth/login.guard';
 // cv/add
 const routes: Routes = [
-  {path: '', component: FirstComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'cv', children: [
-    {path: '', component: CvComponent},
-    {path: 'add', component: AddCvComponent},
-    {path: ':id', component: DetailsCvComponent},
-  ]},
-  {path: 'todo', component: TodoComponent},
-  {path: 'color/:defaultColor', component: ColorComponent},
-  {path: 'word', component: MiniWordComponent},
-  {path: ':qquechose', component: SecondComponent},
-  {path: '**', component: NF404Component},
+  { path: '', component: FirstComponent },
+  { path: 'login', component: LoginComponent },
+  {
+    path: 'cv',
+    children: [
+      { path: '', component: CvComponent },
+      { path: 'add', component: AddCvComponent, canActivate: [loginGuard] },
+      { path: ':id', component: DetailsCvComponent },
+    ],
+  },
+  { path: 'todo', component: TodoComponent },
+  { path: 'color/:defaultColor', component: ColorComponent },
+  { path: 'word', component: MiniWordComponent },
+  { path: ':qquechose', component: SecondComponent },
+  { path: '**', component: NF404Component },
 ];
 
 @NgModule({
