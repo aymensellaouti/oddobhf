@@ -1,12 +1,16 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Todo } from '../model/todo';
 import { LoggerService } from 'src/app/service/logger.service';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { TodoApi } from '../model/todoapi.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TodoService {
   todos: Todo[] = [];
+  http = inject(HttpClient);
   constructor(private loggerService: LoggerService) {}
 
   /**
@@ -47,5 +51,11 @@ export class TodoService {
    */
   addTodo(todo: Todo): void {
     this.todos.push(todo);
+  }
+
+  getTodosFromApi(): Observable<TodoApi[]>{
+    return this.http.get<TodoApi[]>(
+
+    );
   }
 }
