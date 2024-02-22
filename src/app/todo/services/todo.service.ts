@@ -4,6 +4,7 @@ import { LoggerService } from 'src/app/service/logger.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { TodoApi } from '../model/todoapi.model';
+import { APP_API } from 'src/app/config/api.const';
 
 @Injectable({
   providedIn: 'root',
@@ -55,7 +56,7 @@ export class TodoService {
 
   getTodosFromApi(): Observable<TodoApi[]>{
     return this.http.get<TodoApi[]>(
-
+      APP_API.todo
     );
   }
 }
