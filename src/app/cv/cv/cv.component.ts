@@ -4,6 +4,7 @@ import { HelloService } from 'src/app/service/hello.service';
 import { TodoService } from 'src/app/todo/services/todo.service';
 import { CvService } from '../services/cv.service';
 import { distinctUntilChanged } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-cv',
@@ -18,8 +19,17 @@ export class CvComponent {
     private helloService: HelloService,
     private todoService: TodoService,
     private cvService: CvService,
+    private toaster: ToastrService
   ) {
-    this.cvs = this.cvService.getCvs();
+    this.cvService.getCvs().subscribe({
+      next: (cvs) => {
+        this.cvs = cvs
+      },
+      error: (e) => {
+        this.toaster.error(`Les cvs sont fake. Problème au niveau du serveur, merci de contacter l'admin`)
+        this.cvs = this.cvService.getFakeCvs();
+      }
+    });
     this.helloService.sayHello('Je suis cvComponent');
     this.cvService.selectCv$
     .pipe(distinctUntilChanged())

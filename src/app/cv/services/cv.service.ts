@@ -1,12 +1,15 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Cv } from '../model/cv.model';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { APP_API } from 'src/app/config/api.const';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CvService {
   private cvs: Cv[] = [];
+  private http = inject(HttpClient);
   private selectCvSubject = new Subject<Cv>();
   selectCv$ = this.selectCvSubject.asObservable();
   constructor() {
@@ -24,10 +27,24 @@ export class CvService {
       ),
     ];
   }
-  getCvs(): Cv[] {
+  getFakeCvs(): Cv[] {
     return this.cvs;
   }
+  getCvs(): Observable<Cv[]> {
+    return this.http.get<Cv[]>(APP_API.cv);
+  }
 
+  getCvByIdApi(id: number): Observable<Cv> {
+    return this.http.get<Cv>(APP_API.cv + id);
+  }
+
+  deleteCvByIdApi(id: number): Observable<{count: number}> {
+
+    return this.http.delete<{ count: number }>(APP_API.cv + id);
+  }
+  addCvApi(cv: Cv): Observable<Cv> {
+    return this.http.post<Cv>(APP_API.cv, cv);
+  }
   /**
    * Find the cv by id
    *
